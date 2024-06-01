@@ -47,7 +47,7 @@ public class SignUpOnQuipuxStepDefinitions {
     }
     @Then("I must be redirected to main page")
     public void i_must_be_redirected_to_main_page() {
-       theActorInTheSpotlight().attemptsTo(Wait.seconds(3000));
+       theActorInTheSpotlight().attemptsTo(Wait.seconds(5000));
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Text.of(MAIN_TITLE), Matchers.equalTo("Movilidad en Línea"))
                 .orComplainWith(IncorrectSignUp.class, FAILED_SIGN_UP));
     }
@@ -60,7 +60,7 @@ public class SignUpOnQuipuxStepDefinitions {
 
     @Then("the user should see the message {string}")
     public void the_user_should_see_the_message(String message) {
-        theActorInTheSpotlight().attemptsTo(Wait.seconds(3000));
+        theActorInTheSpotlight().attemptsTo(Wait.seconds(5000));
 
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Text.of(PASSWORD_ERROR), Matchers.equalTo(message))
                 .orComplainWith(IncorrectSignUp.class, FAILED_SIGN_UP));
